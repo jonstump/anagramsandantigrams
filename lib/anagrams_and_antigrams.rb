@@ -17,7 +17,10 @@ class Anagrams
     lower_user_words[0].split('').each do |letter|
       if lower_user_words[1].split('').include?(letter)
         @result = "#{user_words[0]} and #{user_words[1]} are anagrams"
-      else
+      elsif unless lower_user_words[1].split('').include?(letter)
+        @result = "#{user_words[0]} and #{user_words[1]} are antigrams"
+        end
+      else  
         @result = "#{user_words[0]} and #{user_words[1]} are not anagrams"
       end
     end
