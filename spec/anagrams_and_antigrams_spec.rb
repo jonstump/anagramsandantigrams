@@ -18,4 +18,8 @@ describe('Anagrams#anagrams_and_antigrams') do
     word = Anagrams.new()
     expect(word.word_check('Eat Tea')).to(eq("Eat and Tea are anagrams"))
   end
+  it('Will still check if inputs are antigrams') do
+    word = Anagrams.new()
+    expect(word.word_check('hi bye')).to(eq("hi and bye are antigrams"))
+  end
 end
