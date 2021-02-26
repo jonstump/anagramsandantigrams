@@ -12,9 +12,10 @@ class Anagrams
   end
 
   def anagrams_and_antigrams(user_input)
-    user_words = user_input.downcase().split(' ')
-    user_words[0].split('').each do |letter|
-      if user_words[1].split('').include?(letter)
+    lower_user_words = user_input.downcase().split(' ')
+    user_words = user_input.split(' ')
+    lower_user_words[0].split('').each do |letter|
+      if lower_user_words[1].split('').include?(letter)
         @result = "#{user_words[0]} and #{user_words[1]} are anagrams"
       else
         @result = "#{user_words[0]} and #{user_words[1]} are not anagrams"
