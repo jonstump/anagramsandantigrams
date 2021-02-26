@@ -14,14 +14,20 @@ class Anagrams
   def anagrams_and_antigrams(user_input)
     lower_user_words = user_input.downcase().split(' ')
     user_words = user_input.split(' ')
-    lower_user_words[0].split('').each do |letter|
-      if lower_user_words[1].split('').include?(letter)
-        @result = "#{user_words[0]} and #{user_words[1]} are anagrams"
-      elsif unless lower_user_words[1].split('').include?(letter)
-        @result = "#{user_words[0]} and #{user_words[1]} are antigrams"
+    i = 0
+    lower_user_words.each_with_index do |word, index|
+
+      if word.split.include?()
+    end
+      word.split('').each do |letter|
+        if lower_user_words[1].split('').include?(letter)
+          @result = "#{user_words[0]} and #{user_words[1]} are anagrams"
+        elsif unless lower_user_words[1].split('').include?(letter)
+          @result = "#{user_words[0]} and #{user_words[1]} are antigrams"
+          end
+        else  
+          @result = "#{user_words[0]} and #{user_words[1]} are not anagrams"
         end
-      else  
-        @result = "#{user_words[0]} and #{user_words[1]} are not anagrams"
       end
     end
     @result
