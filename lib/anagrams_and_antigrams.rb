@@ -13,25 +13,43 @@ class Anagrams
 
   def anagrams_and_antigrams(user_input)
     @lower_user_words_1 = user_input.downcase().split(' ')
-    @lower_user_words_2 = user_input.downcase().split(' ')
+    @result_array = []
     user_words = user_input.split(' ')
-    # binding pry
     i = 0
     until i >= user_words.length
-      i = i + 1
       @lower_user_words_1.each do |word|
-        word.split('').each do |letter|
-          if @lower_user_words_2[i].split('').include?(letter)
-            @result = "#{user_words[i]} and #{user_words[i+1]} are anagrams"
-          elsif unless @lower_user_words_2[i].split('').include?(letter)
-            @result = "#{user_words[i]} and #{user_words[i+1]} are antigrams"
-            end
-          else  
-            @result = "#{user_words[i]} and #{user_words[i+1]} are not anagrams"
+        if word != word
+          word.split('').each do |letter|
+            if words.split('').includes?(letter)
+              @result_array << "#{user_words[i]} and #{user_words[(i + 1)]} are anagrams"
+            elsif unless (word.split('').include?(letter)
+              @result_array << "#{user_words[i]} and #{user_words[(i + 1)]} are antigrams"
+              end
+            else
+              @result_array << "#{user_words[i]} and #{user_words[i+1]} are not anagrams"
           end
-          end
+        end
       end
-    @result
+      i = i + 1
+    end
+    @result_array
     end
   end
 end
+        
+#         word.split('').each do |letter|
+#           if word.split('').include?(letter) && word != word
+#             @result_array << "#{user_words[i]} and #{user_words[(i + 1)]} are anagrams"
+#           elsif unless (word.split('').include?(letter) && word != word)
+#             @result_array << "#{user_words[i]} and #{user_words[(i + 1)]} are antigrams"
+#           end
+#         else  
+#           @result_array << "#{user_words[i]} and #{user_words[i+1]} are not anagrams"
+#         end
+#       end
+#       i = i + 1
+#       end
+#     @result_array
+#     end
+#   end
+# end
