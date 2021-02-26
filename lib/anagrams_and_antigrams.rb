@@ -12,7 +12,13 @@ class Anagrams
   end
 
   def anagrams_and_antigrams(user_input)
-    nil
+    user_input.split('').each do |letter|
+      if user_input.split('').include?(letter)
+        anagram_array = user_input.split(' ')
+        @result = "#{anagram_array[0]} and #{anagram_array[1]} are anagrams"
+      end
+    end
+    @result
   end
 end
 
