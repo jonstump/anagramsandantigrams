@@ -22,4 +22,8 @@ describe('Anagrams#anagrams_and_antigrams') do
     word = Anagrams.new()
     expect(word.word_check('hi bye')).to(eq("hi and bye are antigrams"))
   end
+  it('Will check if a phrase has anagrams or antigrams') do
+    word = Anagrams.new()
+    expect(word.word_check('hi bye ruby bury')).to(eq("hi and bye are antigrams. ruby bury are anagrams"))
+  end
 end
