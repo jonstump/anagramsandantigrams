@@ -1,6 +1,10 @@
 class Anagrams
-  def word_check(user_input)
+  def initialize
     @result_array = []
+  end
+  
+  def word_check(user_input)
+    # @result_array = []
     vowels_array = %w(a e i o u y)
     user_input.split('').each do |letter|
       if vowels_array.include?(letter)
@@ -11,10 +15,14 @@ class Anagrams
     @result_array.join(', ')
   end
 
-  def anagrams_and_antigrams
+  def anagrams_and_antigrams(user_input)
     user_words = user_input.split(' ')
-    
-  end
+    user_words.each do |word|
+      if word.chars.sort == word.chars.sort && word != word
+        @result_array << "#{word} and #{word} are anagrams"
+        end
+      end
+    end
 
 
 
