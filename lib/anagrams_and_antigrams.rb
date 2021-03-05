@@ -14,9 +14,11 @@ class Anagrams
   end
 
   def anagrams_and_antigrams(user_input1, user_input2)
-    if user_input1.downcase.chars.sort === user_input2.downcase.chars.sort
+    phrase1 = user_input1.gsub(/\W/, '')
+    phrase2 = user_input2.gsub(/\W/, '')
+    if phrase1.downcase.chars.sort === phrase2.downcase.chars.sort
       @result = "#{user_input1} and #{user_input2} are anagrams."
-    else user_input1.downcase.chars.sort != user_input2.downcase.chars.sort
+    else phrase1.downcase.chars.sort != phrase2.downcase.chars.sort
       @result = "#{user_input1} and #{user_input2} are antigrams."
     end
     @result
