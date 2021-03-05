@@ -1,9 +1,9 @@
 class Anagrams
   
   def word_check(user_input1, user_input2)
-    checker = user_input1 + " " + user_input2
+    checker = user_input1.downcase + " " + user_input2.downcase
     checker.split(' ').each do |word|
-      if word.chars.include?("u" || "y" || "a" || "e" || "i" || "o")
+      if word.chars.any?{ |letter| ["e", "u", "y", "a", "i", "o"].include?(letter) }
         anagrams_and_antigrams(user_input1, user_input2)
       else
         @result = "#{user_input1} and #{user_input2} are not, or do not include, words." 
@@ -14,7 +14,7 @@ class Anagrams
   end
 
   def anagrams_and_antigrams(user_input1, user_input2)
-    if user_input1.chars.sort === user_input2.chars.sort
+    if user_input1.downcase.chars.sort === user_input2.downcase.chars.sort
       @result = "#{user_input1} and #{user_input2} are anagrams." 
     end
     @result
