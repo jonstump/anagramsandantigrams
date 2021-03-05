@@ -15,7 +15,9 @@ class Anagrams
 
   def anagrams_and_antigrams(user_input1, user_input2)
     if user_input1.downcase.chars.sort === user_input2.downcase.chars.sort
-      @result = "#{user_input1} and #{user_input2} are anagrams." 
+      @result = "#{user_input1} and #{user_input2} are anagrams."
+    else user_input1.downcase.chars.sort != user_input2.downcase.chars.sort
+      @result = "#{user_input1} and #{user_input2} are antigrams."
     end
     @result
   end
