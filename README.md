@@ -5,7 +5,9 @@
 * * *
 
 ## Description
-This is an applications to check if words entered by a user are an anagram or antigram of each other.
+This is an applications to check if words entered by a user are an anagram or antigrams of each other.
+
+For the purpose of this project antigrams are being defined as words that do not contain the same letters.
 * * *
 
 ## Technologies used
@@ -20,11 +22,13 @@ This is an applications to check if words entered by a user are an anagram or an
 Initial Specs:
 | Behavior | Input | Output |
 | ------------- |:-------------:| -----:|
-| Should check if both words are in fact words | trk | Please enter a word |
-| Check if two words are anagrams of each other | ruby bury | ruby and bury are anagrams of each other |
-| Should check if words are antigrams if they are not anagrams | hi bye | hi and bye are antigrams of each other |
-| Should account for multiple words in the phrase being antigrams | hi bye | hi and bye are antigrams of each other |
-| Should account for multiple words in the phrase being either antigrams or anagrams | ruby bury hi bye | ruby and bury are anagrams of each other. hi and bye are antigrams of each other |
+| Should check if both words are in fact words | trk , brk | trk and brk are not, or do not include, words. |
+| Check if two words are anagrams of each other | ruby bury | ruby and bury are anagrams. |
+| Should check if words are antigrams if they are not anagrams | hi bye | hi and bye are antigrams. |
+| Should account for multiple words in the phrase being anagrams or antigrams | Debit Car. Bad Credit | Debit Card. and Bad Credit are anagrams. |
+| Should account for cases of entries | Eat Tea | Eat and Tea are anagrams. |
+
+* * *
 
 ## Installation :
 
@@ -76,8 +80,19 @@ git clone https://github.com/jonstump/anagramsandantigrams
   If you have any problems make sure your HTTPS code is correct! The example above might not be the most recent HTTPS code!
 </div>
 
+* Now that the project is downloaded you will need to run the command 'bundle install' to install all of the gems from the Gemfile.
 
-* Then after the process is completed use the command "editor ." (where editor is your code editor. example code for VScode and vim for Vim) to open the project in your code editor.
+``` bash
+bundle install
+```
+
+* In oder to run the tests enter 'rspec' into your terminal.
+
+``` bash
+bundle install
+```
+
+* If you would like to see the code use the command "editor ." (where editor is your code editor. example code for VScode and vim for Vim) to open the project in your code editor.
 
 ``` bash
 code .
@@ -85,7 +100,6 @@ code .
 
 
 ## Addition comments:
-* 
 
 
 * * *

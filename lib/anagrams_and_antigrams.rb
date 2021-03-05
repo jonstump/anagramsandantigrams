@@ -8,7 +8,6 @@ class Anagrams
       else
         @result = "#{user_input1} and #{user_input2} are not, or do not include, words." 
       end
-      # binding.pry
     end
     @result
   end
