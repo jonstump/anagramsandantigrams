@@ -5,7 +5,7 @@ require('anagrams_and_antigrams')
 describe('Anagrams#word_check') do
   it('Will check if inputs are words') do
     word = Anagrams.new()
-    expect(word.word_check('trk')).to(eq("trk is not a word"))
+    expect(word.word_check('trk','brk')).to(eq("trk is not a word. brk is not a word"))
   end
 end
 
