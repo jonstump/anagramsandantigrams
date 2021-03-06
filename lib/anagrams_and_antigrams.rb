@@ -17,8 +17,9 @@ class Anagrams
     phrase2 = user_input2.gsub(/\W/, '')
     if phrase1.downcase.chars.sort === phrase2.downcase.chars.sort
       @result = "#{user_input1} and #{user_input2} are anagrams."
-    else phrase1.downcase.chars.sort != phrase2.downcase.chars.sort
+    else unless phrase1.downcase.chars.any? { |char| phrase2.downcase.chars.include?(char)}
       @result = "#{user_input1} and #{user_input2} are antigrams."
+    end
     end
     @result
   end
